@@ -77,9 +77,12 @@ mySmoothStructures(subs, smmm, DATAdir, SHOW,'rh')
 % Read MRI data coming from the server analyses
 subs = myReadStructures(subs, DATAdir, sm, tempmgh, SHOW,'rh');
 % Read the behavioural data
-LD = csv2struct([DATAdir fsp 'BEHAV' fsp 'LD' fsp 'LD.csv']); 
+% LD = csv2struct([DATAdir fsp 'BEHAV' fsp 'LD' fsp 'LD.csv']); 
+LD = readtable([DATAdir fsp 'BEHAV' fsp 'LD' fsp 'LD.csv']); 
+
 % Read the labels created in this project, fs305 space, analysis specific
-kkvertex = myReadLabels(DATAdir, labeldir, ANALYSISdir);
+% kkvertex = myReadLabels(DATAdir, labeldir, ANALYSISdir);
+kkvertex = myReadLabels(DATAdir);
 
 %% Clean data according to QA
 % Make NaN those subjects that didn't pass QA

@@ -129,7 +129,7 @@ for ldns = 1:length(ldnames)
 
     end
 end
-% Extract the labels fro the annotation
+% Extract the labels for the annotation
 for ldns = 1:length(ldnames)
     behavname = ldnames{ldns};
     for psb = 1:size(persembrain,2)
